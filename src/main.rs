@@ -6,19 +6,24 @@ use rand::{distributions::Alphanumeric, Rng};
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
-   /// Path of file to generate or append.
-   #[arg(short, long)]
-   path: String,
+    /// Path of file to generate or append.
+    #[arg(short, long)]
+    path: String,
 
-   /// Number of lines to generate.
-   #[arg(short, long, default_value_t = 1000)]
-   lines: usize,
+    /// Number of lines to generate.
+    #[arg(short, long, default_value_t = 1000)]
+    lines: usize,
+
+    /// Number of characters in each line.
+    #[arg(short, long, default_value_t = 8)]
+    characters: usize,
 }
 
 fn main() -> Result<()>{
     let args = Args::parse();
     let size = args.lines;
     let path = args.path; 
+    let chars = args.characters;
 
     let mut file = fs::OpenOptions::new()
         .write(true)
@@ -27,7 +32,7 @@ fn main() -> Result<()>{
         .open(path)?;
 
     for _ in 0..size {
-        let string = generate_string(8);
+        let string = generate_string(chars);
         writeln!(file, "{}", string)?;
     }
 
