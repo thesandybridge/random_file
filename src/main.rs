@@ -2,6 +2,7 @@ use std::{fs, io::Write};
 use clap::Parser;
 use anyhow::Result;
 use rand::{distributions::Alphanumeric, Rng};
+use colorful::{Color, Colorful};
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -31,13 +32,13 @@ fn main() -> Result<()>{
         .create(true)
         .open(&path)?;
 
-    println!("Generating file...");
+    println!("{}", "Generating file...".color(Color::Blue));
 
     for _ in 0..size {
         let string = generate_string(chars);
         writeln!(file, "{}", string)?;
     }
-    println!("File generated!");
+    println!("{}", "File Generated".color(Color::Green));
     println!("Lines: {}", size);
     println!("Line size: {}", chars);
 
