@@ -14,4 +14,6 @@ I may add some verbose output in the future.
 generate_file --path list.txt
 
 generate_file --path list.txt --lines 1000
+
+generate_file --path list.txt --lines 1000 --characters 8 
 ```
