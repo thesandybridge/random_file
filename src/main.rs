@@ -29,12 +29,17 @@ fn main() -> Result<()>{
         .write(true)
         .append(true)
         .create(true)
-        .open(path)?;
+        .open(&path)?;
+
+    println!("Generating file...");
 
     for _ in 0..size {
         let string = generate_string(chars);
         writeln!(file, "{}", string)?;
     }
+    println!("File generated!");
+    println!("Lines: {}", size);
+    println!("Line size: {}", chars);
 
     Ok(())
 }
