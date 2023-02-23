@@ -1,6 +1,6 @@
 # Random File Generator
 
-I created this to assist with an experiment where I was comparing file parsing performance
+I created this to assist with an experiment where I was comparing [file parsing](https://github.com/thesandybridge/sandbox/tree/main/file_parse) performance
 between Rust, Python, Node, and Bun.
 
 You may find it useful.
