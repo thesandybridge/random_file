@@ -8,7 +8,7 @@ You may find it useful.
 # Basic Usage
 
 By default, if no line number is defined, 1000 lines of 8 character Alphanumeric strings are generated.
-I may add some verbose output and options to change the character size or characters in the future.
+I may add some verbose output in the future.
 
 ```bash
 generate_file --path list.txt
