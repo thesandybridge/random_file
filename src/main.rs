@@ -38,9 +38,10 @@ fn main() -> Result<()>{
         let string = generate_string(chars);
         writeln!(file, "{}", string)?;
     }
+
     println!("{}", "File Generated".color(Color::Green));
-    println!("Lines: {}", size);
-    println!("Line size: {}", chars);
+    println!("{:<5} | {:<5}", "Lines", "Characters per line");
+    println!("{:<5} | {:<5}", size, chars);
 
     Ok(())
 }
