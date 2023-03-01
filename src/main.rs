@@ -1,4 +1,8 @@
-use std::{fs, io::Write};
+use std::{
+    fs, 
+    io::Write, 
+    time::Instant
+};
 use clap::Parser;
 use anyhow::Result;
 use rand::{distributions::Alphanumeric, Rng};
@@ -33,14 +37,18 @@ fn main() -> Result<()>{
         .open(&path)?;
 
     println!("{}", "Generating file...".color(Color::Blue));
-
+    let start = Instant::now();
     for _ in 0..size {
         let string = generate_string(chars);
         writeln!(file, "{}", string)?;
     }
+    let end = start.elapsed();
 
-    println!("{}", "File Generated".color(Color::Green));
-    println!("{:<5} | {:<5}", "Lines", "Characters per line");
+    println!("{} {:?}", 
+        "File Generated in".color(Color::Green), 
+        end
+    );
+    println!("{:<5} | {:<5}", "Lines", "Chars/line");
     println!("{:<5} | {:<5}", size, chars);
 
     Ok(())
