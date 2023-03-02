@@ -12,7 +12,7 @@ use colorful::{Color, Colorful};
 #[command(author, version, about, long_about = None)]
 struct Args {
     /// Path of file to generate or append.
-    #[arg(short, long)]
+    #[arg()]
     path: String,
 
     /// Number of lines to generate.
