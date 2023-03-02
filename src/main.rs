@@ -5,7 +5,6 @@ use std::{
 };
 use clap::Parser;
 use anyhow::Result;
-use rand::{distributions::Alphanumeric, Rng};
 use colorful::{Color, Colorful};
 
 #[derive(Parser, Debug)]
@@ -39,7 +38,7 @@ fn main() -> Result<()>{
     println!("{}", "Generating file...".color(Color::Blue));
     let start = Instant::now();
     for _ in 0..size {
-        let string = generate_string(chars);
+        let string = generate_file::generate_string(chars);
         writeln!(file, "{}", string)?;
     }
     let end = start.elapsed();
@@ -54,23 +53,3 @@ fn main() -> Result<()>{
     Ok(())
 }
 
-
-/// Generate a random string of Alphanumeric characters.
-///
-/// # Arguments
-///
-/// * `length` - The length of the string. 
-///
-/// # Examples
-///
-/// ```
-/// generate_string(8) // "fasdhlkk"
-/// ```
-fn generate_string(length: usize) -> String {
-    let s: String = rand::thread_rng()
-        .sample_iter(&Alphanumeric)
-        .take(length)
-        .map(char::from)
-        .collect();
-    return s;
-}
