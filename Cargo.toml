@@ -2,8 +2,16 @@
 name = "gf"
 version = "1.0.0"
 edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "A CLI tool to generate a file with n lines, and n random alphanumeric characters per line."
+homepage = "https://github.com/thesandybridge/random_file"
+repository = "https://github.com/thesandybridge/random_file"
+readme = "README.md"
+keywords = ["cli", "generator", "file generator"]
+categories = ["command-line-utilities"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "gf"
 
 [dependencies]
 anyhow = "1.0.69"
