@@ -21,9 +21,9 @@ By default, if no line number is defined, 1000 lines of 8 character Alphanumeric
 I may add some verbose output in the future.
 
 ```bash
-generate_file list.txt
+gfc list.txt
 
-generate_file --lines 1000 list.txt
+gfc --lines 1000 list.txt
 
-generate_file --lines 1000 --characters 8 list.txt
+gfc --lines 1000 --characters 8 list.txt
 ```
