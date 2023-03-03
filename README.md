@@ -5,6 +5,12 @@ between Rust, Python, Node, and Bun.
 
 You may find it useful.
 
+# Installation
+
+```bash
+curl -s https://raw.githubusercontent.com/thesandybridge/random_file/main/install.sh | bash
+```
+
 # Basic Usage
 
 By default, if no line number is defined, 1000 lines of 8 character Alphanumeric strings are generated.
