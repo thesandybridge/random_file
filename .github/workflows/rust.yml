@@ -20,14 +20,14 @@ jobs:
           override: true
 
       - name: Build
-        run: cargo build --all --release && strip target/release/gf && mv target/release/gf target/release/gf_amd64
+        run: cargo build --all --release && strip target/release/gfc && mv target/release/gfc target/release/gfc_amd64
 
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            target/release/gf_amd64
+            target/release/gfc_amd64
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -52,7 +52,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: target/release/gf.exe
+          files: target/release/gfc.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -72,14 +72,14 @@ jobs:
           override: true
 
       - name: Build for mac
-        run: cargo build --all --release && strip target/release/gf && mv target/release/gf target/release/gf_darwin
+        run: cargo build --all --release && strip target/release/gfc && mv target/release/gfc target/release/gfc_darwin
 
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            target/release/gf_darwin
+            target/release/gfc_darwin
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
