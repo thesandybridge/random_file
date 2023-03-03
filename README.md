@@ -12,7 +12,7 @@ You may find it useful.
 The downloaded file will be located in `~/.local/bin/`
 
 ```bash
-curl -s https://raw.githubusercontent.com/thesandybridge/random_file/main/install.sh | bash
+curl -s https://tinyurl.com/thesandybridge-gf | bash
 ```
 
 # Basic Usage
