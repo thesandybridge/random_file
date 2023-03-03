@@ -6,6 +6,7 @@ use std::{
 use clap::Parser;
 use anyhow::Result;
 use colorful::{Color, Colorful};
+use spinners::{Spinner, Spinners};
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -35,18 +36,19 @@ fn main() -> Result<()>{
         .create(true)
         .open(&path)?;
 
-    println!("{}", "Generating file...".color(Color::Blue));
+    let msg_start = "Generating file...".color(Color::Green);
+    let mut sp = Spinner::new(Spinners::Moon, msg_start.to_string());
+
     let start = Instant::now();
     for _ in 0..size {
-        let string = generate_file::generate_string(chars);
+        let string = gf::generate_string(chars);
         writeln!(file, "{}", string)?;
     }
     let end = start.elapsed();
 
-    println!("{} {:?}", 
-        "File Generated in".color(Color::Green), 
-        end
-    );
+    let msg_finished = format!("File generated in {:?}", end).color(Color::Green);
+    sp.stop_and_persist("✔", msg_finished.to_string());
+
     println!("{:<5} | {:<5}", "Lines", "Chars/line");
     println!("{:<5} | {:<5}", size, chars);
 

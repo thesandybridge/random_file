@@ -1,6 +1,6 @@
 [package]
-name = "generate_file"
-version = "0.1.0"
+name = "gf"
+version = "1.0.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -11,3 +11,4 @@ clap = { version = "4.1.6", features = ["derive"] }
 random-string = "1.0.0"
 rand = "0.8.5"
 colorful = "0.2.2"
+spinners = "4.1.0"
