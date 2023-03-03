@@ -20,7 +20,7 @@ jobs:
           override: true
 
       - name: Build
-        run: cargo build --all --release && strip target/release/gf && mv target/release/wpe target/release/wpe_amd64
+        run: cargo build --all --release && strip target/release/gf && mv target/release/gf target/release/gf_amd64
 
       - name: Release
         uses: softprops/action-gh-release@v1
