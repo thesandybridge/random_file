@@ -20,7 +20,7 @@ cargo install wpe
 The downloaded file will be located in `~/.local/bin/`
 
 ```bash
-curl -s https://thesandybridge.github.io/install/install.sh | bash -s random_file
+curl -s https://thesandybridge.github.io/scripts/install.sh | bash -s random_file
 ```
 
 # Basic Usage
