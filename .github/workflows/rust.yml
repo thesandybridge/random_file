@@ -72,7 +72,7 @@ jobs:
           override: true
 
       - name: Build for mac
-        run: cargo build --all --release && strip target/release/gf && mv target/release/gf target/release/wpe_darwin
+        run: cargo build --all --release && strip target/release/gf && mv target/release/gf target/release/gf_darwin
 
       - name: Release
         uses: softprops/action-gh-release@v1
