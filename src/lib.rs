@@ -8,8 +8,8 @@ use rand::{distributions::Alphanumeric, Rng};
 /// # Examples
 ///
 /// ```
-/// let first = gf::generate_string(8);
-/// let second = gf::generate_string(8);
+/// let first = gfc::generate_string(8);
+/// let second = gfc::generate_string(8);
 /// assert_ne!(first, second);
 /// ```
 pub fn generate_string(length: usize) -> String {
