@@ -2,7 +2,7 @@
 
 GITHUB_USER=thesandybridge
 GITHUB_REPO=random_file
-BINARY=gf
+BINARY=gfc
 LOCAL_PATH=~/.local/bin/
 
 download_url=$(curl -s https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/releases/latest \
