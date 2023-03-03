@@ -1,5 +1,5 @@
 [package]
-name = "gf"
+name = "gfc"
 version = "1.0.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
@@ -11,7 +11,7 @@ keywords = ["cli", "generator", "files"]
 categories = ["command-line-utilities"]
 
 [lib]
-name = "gf"
+name = "gfc"
 
 [dependencies]
 anyhow = "1.0.69"

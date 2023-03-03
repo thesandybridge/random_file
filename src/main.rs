@@ -41,7 +41,7 @@ fn main() -> Result<()>{
 
     let start = Instant::now();
     for _ in 0..size {
-        let string = gf::generate_string(chars);
+        let string = gfc::generate_string(chars);
         writeln!(file, "{}", string)?;
     }
     let end = start.elapsed();
