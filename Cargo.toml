@@ -7,7 +7,7 @@ description = "A CLI tool to generate a file with n lines, and n random alphanum
 homepage = "https://github.com/thesandybridge/random_file"
 repository = "https://github.com/thesandybridge/random_file"
 readme = "README.md"
-keywords = ["cli", "generator", "file generator"]
+keywords = ["cli", "generator", "files"]
 categories = ["command-line-utilities"]
 
 [lib]
